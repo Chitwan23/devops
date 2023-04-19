@@ -4,47 +4,81 @@
   <artifactId>upes.devops</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  
-  <properties>
-  	<maven.compiler.source>1.8</maven.compiler.source>
-  	<maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
-  
+  <properties>													
+	  <maven.compiler.source>1.8</maven.compiler.source>
+	  <maven.compiler.source>1.8</maven.compiler.source> 
+  </properties>													
   <build>
-		  
-  	<plugins>
-  		<plugin>  		
-  			<groupId>org.apache.maven.plugins</groupId>
-  			<artifactId>maven-jar-plugin</artifactId>
-  			<version>3.1.0</version>
-  			<configuration>
-  				<archive>
-  					<manifest>
-  						<addClasspath>true</addClasspath>
-  						<classpathPrefix>lib</classpathPrefix>
-  						<mainClass>mypkg.Mycls</mainClass>
-  					</manifest>
-  				</archive>
-  			</configuration>
-  		</plugin>
-  	</plugins>
-  <reporting>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-report-plugin</artifactId>
-      <version>3.0.0-M5</version>
-    </plugin>
-  </plugins>
-</reporting>	
-  </build>
-  <dependencies>
-	  <dependency>
-		  <groupId>org.apache.maven.plugins</groupId>
+	  <plugins>  
+
+		  <plugin>												
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-jar-plugin</artifactId>
+			  <version>3.3.0</version>
+			  <configuration>
+				  <archive>
+					  <manifest>
+						  <addClasspath>true</addClasspath>
+						  <classpathPrefix>lib</classpathPrefix>
+						  <mainClass>mypkg.MyCalc</mainClass>
+					  </manifest>
+				  </archive>
+			  </configuration>
+		  </plugin>
+											
+		  <plugin>																
+            <groupId>org.apache.maven.plugins</groupId>			
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+      												
+        <plugin>												
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>3.0.0</version>
-	  </dependency>
-      </dependencies>
+        <configuration>
+          <outputName>CHITWAN_REPORT</outputName>
+          <outputDirectory>C:\Users\Vidyarthi\.eclipse\upes.devops\REPORT</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-site-plugin</artifactId>
+		  <version>4.0.0-M6</version>
+	  </plugin>													
+	  </plugins>											
+  </build>
+  <reporting>													
+    <plugins>
+	  
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <outputName>CHITWAN_report</outputName>
+          <outputDirectory>C:\Users\Vidyarthi\.eclipse\upes.devops\REPORT</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-site-plugin</artifactId>
+		  <version>4.0.0-M6</version>
+	  </plugin>													
+    </plugins>
+  </reporting>
+  <dependencies>
+	
+	  <dependency>												
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>4.12</version>
+		  <scope>test</scope>
+	  </dependency>												
+  </dependencies>
   </project>
-  
   
